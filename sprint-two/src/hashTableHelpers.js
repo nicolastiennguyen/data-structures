@@ -57,3 +57,9 @@ var getIndexBelowMaxForKey = function(str, max) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+// getIndexBelowMaxForKey: O(n) because it iterates throughn characters in str input and n can be infinitely long
+// .checkLimit: O(1)
+// .get: O(1)
+// .set: O(1)
+// .each: O(n^2) potentially have to iterate on array each callback function is called upon for the hashTable storage

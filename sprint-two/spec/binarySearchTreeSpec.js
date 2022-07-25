@@ -37,4 +37,18 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should only insert numbers as values in the tree', function() {
+    binarySearchTree.insert('thomas');
+    expect(Object.keys(binarySearchTree.left).length).to.equal(0);
+    expect(Object.keys(binarySearchTree.right).length).to.equal(0);
+  });
+
+  it('should return false when searching for values that are not numbers', function() {
+    expect(binarySearchTree.contains('nick')).to.equal(false);
+    expect(binarySearchTree.contains([])).to.equal(false);
+    expect(binarySearchTree.contains({})).to.equal(false);
+    expect(binarySearchTree.contains(function() {})).to.equal(false);
+  });
+
 });
